@@ -1,0 +1,12 @@
+@defer (on interaction) {
+    <div id="cuarto-div">
+        <h1> 4to componente </h1>
+        <p>Use la propiedad <b>defer</b> para hacer aparecer este componente! </p>
+    </div>
+} @placeholder {
+    <p> Estose muestra antes de cumplir el trigger puesto en defer </p>
+} @loading (minimum 2s) {
+    <p> Se carga el componente... </p>
+} @error {
+    <p> Hubo un error cargando el componente..</p>
+}

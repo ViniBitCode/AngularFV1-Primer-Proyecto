@@ -1,0 +1,28 @@
+
+.navbar {
+    background-color: bisque;
+    border: 3px black solid;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2vw;
+    min-height: 5vw;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+
+}
+
+a {
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: rgb(71, 128, 235);
+        transition: color 0.3s ease;
+    }
+}
+

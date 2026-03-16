@@ -1,0 +1,44 @@
+<div id="primer-div">
+  <h1>1° Componente: origin</h1>
+  <p>En este componente voy a ir probando las cosas que tiran en el tuto de Angular...</p>
+  <hr />
+  <p>
+    Uso de <b>if</b> y <b>else</b> (<i>
+      haciendo uso de una variable puesta en la clase del componente</i
+    >):
+  </p>
+  @if (isServerRunning) {
+    <span>La variable es un bool y esto se muestra cuando está en true</span>
+  } @else {
+    <span>La variable es un bool y esto se muestra cuando está en false</span>
+  }
+  <hr />
+  <p>uso de la etiqueta <b>for</b> (<i>user of users; track user.name</i>)</p>
+  @for (user of users; track user.name) {
+    <p>{{ user.name }} - {{ user.age }}</p>
+  }
+
+  <hr />
+  <p>uso del Binding para uso de variables en etiquetas</p>
+  <div [contentEditable]="isEditable">
+    <p>Este es un ejemplo de contenido editable; isEditable = true</p>
+  </div>
+
+  <hr />
+  <p>Ejemplo de como son los eventos: <b>mouseover</b></p>
+  <section (mouseover)="mostrarMensaje()">
+    <p>Si pasas el mouse por encima aparece texto al final: {{ mensaje }}</p>
+  </section>
+
+  <hr />
+  <p>Ejemplo de uso de un componente dentro de otro con <b>Input()</b></p>
+  <p>{{ primerInputNombre() }}</p>
+
+  <hr />
+  <app-third (textoParaElPadre)="guardarTexto($event)"></app-third>
+  <p>Mensaje desde el hijo: {{ textoRecibido }}</p>
+
+  <hr>
+  <p> {{ texto_imagen }}</p>
+  <img [ngSrc]="logoUrl" [alt]="logoAlt" width="200" height="200">
+</div>

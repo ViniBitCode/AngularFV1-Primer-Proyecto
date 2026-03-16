@@ -1,0 +1,16 @@
+<div id="septimo-componente">
+  <h1>7mo componente: FORMS REACTIVOS!</h1>
+  <p>
+    Ahora hago uso del paquete ReactiveFormsModule para hacer los formularios junto a validaciones
+  </p>
+  <form [formGroup]="profile_form" (ngSubmit)="handleSubmit()">
+    <label> Nombre</label>
+    <input type="text" formControlName="nombre" />
+    <label> Email</label>
+    <input type="email" formControlName="email" />
+    <button type="submit" [disabled]="!profile_form.valid">Enviar</button>
+  </form>
+  <h2>Perfil puesto en el Form:</h2>
+  <p>Nombre: {{ profile_form.value.nombre }}</p>
+  <p>Email: {{ profile_form.value.email }}</p>
+</div>

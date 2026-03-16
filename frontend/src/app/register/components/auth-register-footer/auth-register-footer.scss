@@ -1,0 +1,26 @@
+#auth-register-footer {
+    border: 1px black solid;
+    background-color: blanchedalmond;
+    min-height: 3vw;
+    width: 30vw;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+button {
+    font-size: 1vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-register-button {
+    background-color: #deb887;
+    border: 0.5px black solid;
+    min-height: 3vw;
+    transition: 0.1s ease-in-out;
+}
+
+.auth-register-button:hover {
+    background-color: #f2dbbc;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}

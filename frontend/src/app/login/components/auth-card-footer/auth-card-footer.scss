@@ -1,0 +1,25 @@
+#auth-footer {
+    background-color: beige;
+    width: 15vw;
+    height: 20%;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+button {
+    font-size: 1vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-button {
+    background-color: #deb887;
+    border: 0.5px black solid;
+    min-height: 3vw;
+    transition: 0.1s ease-in-out;
+}
+
+.auth-button:hover {
+    background-color: #f2dbbc;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}

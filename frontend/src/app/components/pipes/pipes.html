@@ -1,0 +1,18 @@
+<div id="pipes-componente">
+  <h1>En este componente hago manejo de los Pipes</h1>
+  <p>Los pipes son una forma sencilla de transformar datos en la plantilla que le pasemos.</p>
+  <p>
+    En este ejmplo, defino una variable "nombre" que esta escrita en mayuscula, pero la transformo a
+    minússcula: {{ username | lowercase }}
+  </p>
+  <hr>
+  <p> Ademas, se pueden hacer banda de transformaciones en los datos gracias a los Pipes</p>
+  <ul>
+    <li> Numero con decimales que yo quiera: {{ numero | number:'1.2-2' }}</li>
+    <li> Fecha con tipo Date: {{ fecha | date:'medium' }}</li>
+    <li> Monto en moneda: {{ plata | currency }}</li>
+  </ul>
+  <hr>
+  <p>Tambien podemos hacer Pipes personalizados, como dar vuelta una palabra</p>
+    <p>Palabra al reves: {{ username | pipePersonalizado }}</p>
+</div>

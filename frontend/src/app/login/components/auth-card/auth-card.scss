@@ -1,0 +1,11 @@
+.auth-card {
+    background-color: rgb(172, 171, 171);
+    border: 1px black solid;
+    border-radius: 3px;
+    min-width: none;
+    min-height: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}

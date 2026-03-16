@@ -1,0 +1,15 @@
+<div id="sexto-componente">
+  <h1>6to componente: FORMS!</h1>
+  <p>
+    En este componente se muestra un formulario de un solo field junto un boton con una funcion que
+    llama a un alert() que muestra lo que hay en el field
+  </p>
+  <hr />
+  <p>Nombre de usaurio: {{ nombre_user }}</p>
+  <p>El framework favorito de {{ nombre_user }} es: {{ framework_favorito }}</p>
+  <label for="framework"
+    >Framework favorito:
+    <input id="framework" type="text" [(ngModel)]="framework_favorito" />
+  </label>
+  <button (click)="mostrar_field()">Mostrar texto</button>
+</div>

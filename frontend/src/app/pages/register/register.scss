@@ -1,0 +1,20 @@
+#auth-register {
+    background-image: linear-gradient(to bottom, #4ed0d9, #526c76);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth-register-container {
+    border: 1px black solid;
+    background-color: beige;
+    width: 30vw;
+    min-height: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
