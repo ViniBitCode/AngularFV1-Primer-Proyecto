@@ -10,7 +10,17 @@
     ><br />
     <mat-form-field appearance="fill">
       <mat-label>Contraseña</mat-label>
-      <input matInput placeholder="" formControlName="password" /> </mat-form-field
-    ><br />
+      <input matInput [type]="hide_password() ? 'password' : 'text'" formControlName="password" />
+      <button
+        matIconButton
+        matSuffix
+        (click)="clickEvent_password($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide_password()"
+      >
+        <mat-icon>{{ hide_password() ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <br />
   </form>
 </div>

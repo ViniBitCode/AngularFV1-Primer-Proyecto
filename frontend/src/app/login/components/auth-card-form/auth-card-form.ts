@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 
@@ -11,7 +12,7 @@ import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angula
   imports: [
     ReactiveFormsModule, MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule, MatButtonModule
 
   ],
   templateUrl: './auth-card-form.html',
@@ -24,5 +25,12 @@ export class AuthCardForm {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
+  hide_password = signal(true);
+  clickEvent_password(event: MouseEvent) {
+
+    this.hide_password.set(!this.hide_password());
+    event.stopPropagation();
+
+  }
 
 }
