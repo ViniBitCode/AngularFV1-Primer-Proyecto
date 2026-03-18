@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
-
+import { AuthRegister } from '../../../services/auth-register';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-card-form',
@@ -20,9 +21,13 @@ import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angula
 })
 export class AuthCardForm {
 
+  constructor(private router: Router) { }
+
+  private authRegister = inject(AuthRegister);
+
   login_form = new FormGroup({
-    password: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
   });
 
   hide_password = signal(true);
@@ -33,4 +38,17 @@ export class AuthCardForm {
 
   }
 
+  loguearUsuario() {
+
+    this.authRegister.login(this.login_form.value).subscribe({
+      next: (user: any) => {
+        alert("¡Bienvenido " + user.nombre + "!");
+        this.login_form.reset();
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        alert("Credenciales incorrectas, Reintenta.");
+      }
+    });
+  }
 }

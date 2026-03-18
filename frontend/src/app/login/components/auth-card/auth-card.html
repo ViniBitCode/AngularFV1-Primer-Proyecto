@@ -1,5 +1,5 @@
 <div class="auth-card">
   <app-auth-card-header></app-auth-card-header>
-  <app-auth-card-form></app-auth-card-form>
-  <app-auth-card-footer></app-auth-card-footer>
+  <app-auth-card-form #form></app-auth-card-form>
+  <app-auth-card-footer (loginClick)="form.loguearUsuario()"></app-auth-card-footer>
 </div>

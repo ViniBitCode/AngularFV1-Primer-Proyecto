@@ -5,6 +5,8 @@
 package primer_login.login.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import primer_login.login.model.Usuario;
 
 public interface IUsuarioService {
@@ -18,5 +20,7 @@ public interface IUsuarioService {
     public Usuario traerUsuarioPorID(Long id);
 
     public void editarUsuario(Long id, String nombre, String telefono, String emaail, String contraseña);
+
+    public Optional<Usuario> iniciarSesion(String email, String password);
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,10 @@ export class AuthCardFooter {
 
   constructor(private router: Router) { }
 
-  mensaje_prueba:string = "Hola, soy un mensaje de prueba";
+  @Output() loginClick = new EventEmitter<void>();
+  
   login(){
-    alert(this.mensaje_prueba);
+    this.loginClick.emit();
   }
 
   register(){

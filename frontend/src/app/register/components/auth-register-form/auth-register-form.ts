@@ -41,14 +41,12 @@ export class AuthRegisterForm {
 
   }
 
-
-
   registrarUsuario() {
+    
     if (this.register_form.valid) {
 
       const datos = this.register_form.value;
       delete datos.repeat_password;
-
       this.authRegister.registrar(datos).subscribe({
         next: (res) => {
           alert("¡Registrado con éxito!");

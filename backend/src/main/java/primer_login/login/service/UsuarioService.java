@@ -5,8 +5,11 @@
 package primer_login.login.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import primer_login.login.model.Usuario;
 import primer_login.login.repository.UsuarioRepo;
 
@@ -44,6 +47,17 @@ public class UsuarioService implements IUsuarioService {
         usuario.setNombre(nombre);
         usuario.setTelefono(telefono);
         usuarioRepo.save(usuario);
+
+    }
+
+    @Override
+    public Optional<Usuario> iniciarSesion(String email, String password) {
+
+        Optional<Usuario> user = usuarioRepo.findByEmail(email);
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            return user;
+        }
+        return Optional.empty();
 
     }
 
